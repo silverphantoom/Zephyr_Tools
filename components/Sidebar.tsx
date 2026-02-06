@@ -14,6 +14,7 @@ import {
   Timer,
   Zap,
   ClipboardList,
+  Users,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useTheme } from '@/hooks/use-theme';
@@ -24,6 +25,7 @@ const navigation = [
   { name: 'To-Do List', href: '/todos', icon: CheckSquare },
   { name: 'Calendar', href: '/calendar', icon: Calendar },
   { name: 'Kanban', href: '/kanban', icon: Kanban },
+  { name: 'CRM', href: '/crm', icon: Users },
 ];
 
 const coolFeatures = [
