@@ -114,3 +114,4 @@ export const CATEGORIES = [
 export * from './pomodoro';
 export * from './streak';
 export * from './standup';
+export * from './crm';

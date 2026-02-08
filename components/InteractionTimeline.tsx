@@ -29,7 +29,7 @@ const iconMap = {
 interface InteractionTimelineProps {
   interactions: Interaction[];
   showCustomer?: boolean;
-  customersMap?: Map<string, string>; // id -> name
+  customersMap?: Map<string, string>;
   onAddInteraction?: () => void;
   onEditInteraction?: (interaction: Interaction) => void;
   compact?: boolean;
@@ -61,7 +61,7 @@ function InteractionItem({
   const isFollowUpOverdue = followUpDate && isPast(followUpDate) && !isToday(followUpDate);
   
   return (
-    <div className={cn('flex gap-4', compact && 'gap-3')}">
+    <div className={cn('flex gap-4', compact && 'gap-3')}>
       {/* Timeline line */}
       {!isLast && (
         <div className="absolute left-[19px] top-10 bottom-0 w-px bg-slate-200 dark:bg-slate-700" />
@@ -89,7 +89,7 @@ function InteractionItem({
         )}
       >
         <Card className="hover:border-indigo-300 dark:hover:border-indigo-700 transition-colors">
-          <CardContent className={cn('p-4', compact && 'p-3')}">
+          <CardContent className={cn('p-4', compact && 'p-3')}>
             {/* Header */}
             <div className="flex items-start justify-between gap-2 mb-2">
               <div className="flex items-center gap-2">
@@ -247,7 +247,7 @@ export function FollowUpList({ interactions, customersMap, onComplete }: FollowU
       <div className="text-center py-8 text-slate-500">
         <CheckCircle2 className="w-10 h-10 mx-auto mb-3 text-emerald-500" />
         <p className="text-sm">No upcoming follow-ups</p>
-        <p className="text-xs text-slate-400 mt-1">You're all caught up!</p>
+        <p className="text-xs text-slate-400 mt-1">You are all caught up!</p>
       </div>
     );
   }

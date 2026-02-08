@@ -102,7 +102,7 @@ export function StreakCounter({ streakData, weeklyProgress }: StreakCounterProps
                       initial={{ scale: 0 }}
                       animate={{ scale: 1 }}
                       className="text-xs"
-003e
+                    >
                       🔥
                     </motion.div>
                   )}

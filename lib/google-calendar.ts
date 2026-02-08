@@ -41,7 +41,7 @@ export async function getCalendarClient(): Promise<calendar_v3.Calendar | null> 
       ],
     });
 
-    const calendar = google.calendar({ version: 'v3', auth });
+    const calendar = google.calendar({ version: 'v3', auth: auth as any });
     return calendar;
   } catch (error) {
     console.error('Error initializing calendar client:', error);

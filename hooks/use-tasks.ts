@@ -204,7 +204,7 @@ export function useTasks() {
             shouldSync = true;
           }
           
-          updatedTask = {
+          const newTask: Task = {
             ...task,
             ...updates,
             updatedAt: new Date().toISOString(),
@@ -214,15 +214,16 @@ export function useTasks() {
                 ? null 
                 : task.completedAt,
           };
-          return updatedTask;
+          updatedTask = newTask;
+          return newTask;
         }
         return task;
       })
     );
     
     // Sync to calendar if due date was updated
-    if (updatedTask && shouldSync && updatedTask.dueDate) {
-      syncTaskToCalendar(updatedTask);
+    if (updatedTask && shouldSync && (updatedTask as Task).dueDate) {
+      syncTaskToCalendar(updatedTask as Task);
     }
     
     return updatedTask;

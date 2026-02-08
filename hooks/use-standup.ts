@@ -57,7 +57,7 @@ export function useStandup(tasks: Task[]) {
         if (t.priority === 'urgent') return true;
         if (t.dueDate) {
           const dueDate = new Date(t.dueDate);
-          return dueDate < today && (t.priority === 'high' || t.priority === 'urgent');
+          return dueDate < today && t.priority === 'high';
         }
         return false;
       })

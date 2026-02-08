@@ -16,7 +16,6 @@ import {
   Clock,
   Flame,
 } from 'lucide-react';
-import { Sidebar } from '@/components/Sidebar';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { usePomodoro } from '@/hooks/use-pomodoro';
@@ -106,13 +105,8 @@ export default function FocusPage() {
 
   if (!tasksLoaded || !pomodoroLoaded) {
     return (
-      <div className="flex min-h-screen bg-slate-100 dark:bg-slate-950">
-        <Sidebar />
-        <main className="ml-64 flex-1 p-8">
-          <div className="flex items-center justify-center h-full">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600" />
-          </div>
-        </main>
+      <div className="flex items-center justify-center h-full p-8">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600" />
       </div>
     );
   }
@@ -129,9 +123,7 @@ export default function FocusPage() {
   };
 
   return (
-    <div className="flex min-h-screen bg-slate-100 dark:bg-slate-950">
-      <Sidebar />
-      <main className="ml-64 flex-1 p-8">
+    <div className="min-h-screen bg-slate-100 dark:bg-slate-950 p-8">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -421,7 +413,6 @@ export default function FocusPage() {
             </motion.div>
           </div>
         </motion.div>
-      </main>
     </div>
   );
 }

@@ -26,11 +26,14 @@ const navigation = [
   { name: 'Calendar', href: '/calendar', icon: Calendar },
   { name: 'Kanban', href: '/kanban', icon: Kanban },
   { name: 'CRM', href: '/crm', icon: Users },
+  { name: 'Analytics', href: '/analytics', icon: Zap },
 ];
 
 const coolFeatures = [
   { name: 'Focus Timer', href: '/focus', icon: Timer },
-  { name: 'Standup', href: '/standup', icon: ClipboardList },
+  { name: 'Daily Standup', href: '/standup', icon: ClipboardList },
+  { name: 'Streaks', href: '/streaks', icon: Sun },
+  { name: 'Team', href: '/team', icon: Users },
 ];
 
 export function Sidebar() {

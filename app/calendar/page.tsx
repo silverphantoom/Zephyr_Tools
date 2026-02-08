@@ -23,8 +23,8 @@ import {
   addMonths,
   subMonths,
   isToday,
+  isTomorrow,
 } from 'date-fns';
-import { Sidebar } from '@/components/Sidebar';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { TaskModal } from '@/components/TaskModal';
@@ -155,21 +155,14 @@ export default function CalendarPage() {
 
   if (!isLoaded) {
     return (
-      <div className="flex min-h-screen bg-slate-100 dark:bg-slate-950">
-        <Sidebar />
-        <main className="ml-64 flex-1 p-8">
-          <div className="flex items-center justify-center h-full">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600" />
-          </div>
-        </main>
+      <div className="flex items-center justify-center h-full p-8">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600" />
       </div>
     );
   }
 
   return (
-    <div className="flex min-h-screen bg-slate-100 dark:bg-slate-950">
-      <Sidebar />
-      <main className="ml-64 flex-1 p-8">
+    <div className="min-h-screen bg-slate-100 dark:bg-slate-950 p-8">
         <div className="max-w-7xl mx-auto space-y-6">
           {/* Header */}
           <motion.div
@@ -653,7 +646,6 @@ export default function CalendarPage() {
             </motion.div>
           </div>
         </div>
-      </main>
 
       <TaskModal
         isOpen={isModalOpen}
