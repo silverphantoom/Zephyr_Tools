@@ -1,8 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: 'export',
-  distDir: 'dist',
+  // For GitHub Pages static export:
+  // output: 'export',
+  // distDir: 'dist',
+  
+  // For Vercel (default):
   images: {
     unoptimized: true,
   },
